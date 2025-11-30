@@ -1,11 +1,112 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Kalki Empire</title>
-  </head>
-  <body style="font-family:Arial; padding:40px;">
-    <h1>Kalki Empire</h1>
-    <p>Your landing page is live.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kalki Empire</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: radial-gradient(circle at center, #0f0f15 0%, #050509 100%);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      width: 260px;
+      height: auto;
+      margin-top: 40px;
+      filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.45));
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 25px 0 10px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: #d4af37;
+      text-shadow: 0px 0px 18px rgba(212, 175, 55, 0.25);
+    }
+
+    p.subtitle {
+      font-size: 18px;
+      color: #c8c8c8;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+      background: rgba(255,255,255,0.06);
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .btn.gold {
+      background: linear-gradient(90deg, #d4af37, #b6881a);
+      color: #050505 !important;
+      border: 0;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 38px; }
+      .logo { width: 200px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Your 3D Logo -->
+  <img class="logo" src="/logo-main.png" alt="Kalki Empire">
+
+  <h1>KALKI EMPIRE</h1>
+
+  <p class="subtitle">
+    A luxury house of curated estates, cinematic escapes, creative studio visions and timeless thrift.
+  </p>
+
+  <div class="buttons">
+    <a href="/estate.html" class="btn gold">Kalki Estate</a>
+    <a href="/escapes.html" class="btn">Kalki Escapes</a>
+    <a href="mailto:operations@kalkiempire.com" class="btn">Contact Operations</a>
+    <a href="mailto:ceo@kalkiempire.com" class="btn">Message CEO</a>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Kalki Empire — All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
 </html>
