@@ -1,112 +1,130 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Kalki Empire</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Kalki Empire — curated estates, cinematic escapes, creative studio and timeless thrift." />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: radial-gradient(circle at center, #0f0f15 0%, #050509 100%);
-      color: #fff;
-      -webkit-font-smoothing: antialiased;
-      text-align: center;
-      padding: 40px 20px;
+    :root{
+      --bg-1:#050509;
+      --bg-2:#0f0f14;
+      --muted:#a9b3bd;
+      --gold-1:#f3d06b;
+      --gold-2:#d4af37;
+      --gold-3:#b07b19;
+      --card: rgba(255,255,255,0.03);
+      --max-w:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% 30%, rgba(0,0,0,0.30), transparent 10%), linear-gradient(180deg,var(--bg-2),var(--bg-1));
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-align:center;
+      padding:36px 20px 64px;
     }
 
+    .container{max-width:var(--max-w);margin:0 auto;}
+
+    /* LOGO */
+    .logo-wrap{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;margin-top:8px}
     .logo {
-      width: 260px;
-      height: auto;
-      margin-top: 40px;
-      filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.45));
+      width:220px;
+      height:auto;
+      border-radius:10px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
+      background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35)); /* keeps any leftover square subtle */
+      padding:8px;
     }
 
-    h1 {
-      font-size: 48px;
-      margin: 25px 0 10px;
-      letter-spacing: 3px;
-      font-weight: 700;
-      color: #d4af37;
-      text-shadow: 0px 0px 18px rgba(212, 175, 55, 0.25);
+    /* HEADLINE */
+    h1{
+      margin:8px 0 6px;
+      font-size:44px;
+      letter-spacing:3px;
+      color:var(--gold-2);
+      text-shadow: 0 6px 20px rgba(212,175,55,0.12);
+    }
+    p.lead{
+      margin:8px auto 22px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:760px;
+      line-height:1.5;
     }
 
-    p.subtitle {
-      font-size: 18px;
-      color: #c8c8c8;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    /* Buttons */
+    .buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      min-width:180px;
+      padding:12px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-weight:700;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.06);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      transition:transform .14s ease, box-shadow .14s ease, background .14s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
+    .btn:hover{ transform:translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+    .btn.gold{
+      background: linear-gradient(90deg,var(--gold-1),var(--gold-2));
+      color:#071018;
+      border:0;
+      box-shadow: 0 10px 30px rgba(212,175,55,0.12);
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .btn.small{min-width:150px;font-size:14px;padding:10px 14px}
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
+    /* footer */
+    footer{margin-top:36px;color:var(--muted);font-size:13px}
+    footer a{color:var(--muted);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,0.03)}
+    footer a:hover{color:var(--gold-2);border-bottom-color:transparent}
 
-    .btn {
-      padding: 12px 22px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      backdrop-filter: blur(4px);
-      background: rgba(255,255,255,0.06);
-      transition: 0.2s;
-    }
-    .btn:hover {
-      background: rgba(255,255,255,0.15);
-    }
-
-    .btn.gold {
-      background: linear-gradient(90deg, #d4af37, #b6881a);
-      color: #050505 !important;
-      border: 0;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 13px;
-      color: #777;
-    }
-
-    @media (max-width: 700px) {
-      h1 { font-size: 38px; }
-      .logo { width: 200px; }
+    /* responsive */
+    @media (max-width:740px){
+      .logo{width:170px}
+      h1{font-size:30px}
+      .btn{min-width:46%}
+      body{padding:28px 12px 48px}
     }
   </style>
 </head>
-
 <body>
+  <div class="container">
+    <div class="logo-wrap">
+      <!-- Replace /logo-main.png with your uploaded logo filename -->
+      <img class="logo" src="/logo-main.png" alt="Kalki Empire logo (gold crown)">
+      <h1>KALKI EMPIRE</h1>
+      <p class="lead">A luxury house of curated estates, cinematic escapes, creative studio visions and timeless thrift — by Shantanu Vivek Lokhande.</p>
+    </div>
 
-  <!-- Your 3D Logo -->
-  <img class="logo" src="/logo-main.png" alt="Kalki Empire">
+    <div class="buttons" role="navigation" aria-label="Primary actions">
+      <a class="btn gold" href="/estate.html">Kalki Estate</a>
+      <a class="btn ghost" href="/escapes.html">Kalki Escapes</a>
+      <a class="btn small" href="mailto:operations@kalkiempire.com">Contact Operations</a>
+      <a class="btn small" href="mailto:ceo@kalkiempire.com">Message CEO</a>
+    </div>
 
-  <h1>KALKI EMPIRE</h1>
-
-  <p class="subtitle">
-    A luxury house of curated estates, cinematic escapes, creative studio visions and timeless thrift.
-  </p>
-
-  <div class="buttons">
-    <a href="/estate.html" class="btn gold">Kalki Estate</a>
-    <a href="/escapes.html" class="btn">Kalki Escapes</a>
-    <a href="mailto:operations@kalkiempire.com" class="btn">Contact Operations</a>
-    <a href="mailto:ceo@kalkiempire.com" class="btn">Message CEO</a>
+    <footer>
+      © <span id="year"></span> Kalki Empire — All rights reserved • <a href="/privacy.html">Privacy</a>
+    </footer>
   </div>
 
-  <footer>
-    © <span id="year"></span> Kalki Empire — All Rights Reserved
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
+  <script>document.getElementById('year').innerText = new Date().getFullYear()</script>
 </body>
 </html>
